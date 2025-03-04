@@ -10,6 +10,17 @@ $line-height-base:1.1;
 $color-base:#333;
 $color-sub-base:#FFF;
 
+$breakpoints: (
+    "sp": "screen and (max-width: 600px)",
+    "pc": "screen and (min-width: 750px)", // 閉じ括弧を追加しました
+) !default;
+
+@mixin mq($breakpoint: pc) {
+    @media #{map-get($breakpoints, $breakpoint)} {
+        @content;
+    }
+}
+
 body{
     font-family: $font-ja;
     font-size:$font-size-base ;
@@ -19,6 +30,9 @@ body{
     background:$color-sub-base ;
     margin-left: auto;
     margin-right: auto;
+    @include mq(pc) {
+        font-size: 30px;
+    }
 
 }
 
@@ -28,11 +42,21 @@ body{
     padding: 7px 12px 10px 19px;
     background-color: #735a46;
     display: flex;
+
+    @include mq(pc) {
+        height: 122px;
+        padding: 14px 24px 20px 38px;
+
+    }
 }
 
 .header__logo {
     width: 49px;
   height: 42px;
+  @include mq(pc) {
+    width: 98px;
+    height: 84px;
+  }
 
 }
 
@@ -41,18 +65,29 @@ body{
     flex-direction: row;
     gap: 8px;
     margin-left: auto;
+    @include mq(pc) {
+        gap: 16px;
+    }
 
 }
 
 .header__right--green {
     width: 120px;
   height: 45px;
+  @include mq(pc) {
+    width: 240px;
+    height: 90px;
+  }
 
 }
 
 .header__right--brown {
     width: 120px;
   height: 45px;
+  @include mq(pc) {
+    width: 240px;
+    height: 90px;
+  }
 
 }
 
@@ -60,6 +95,9 @@ body{
 .fv{
     background-color: rgba(243, 230, 211, 0.39);
     padding-bottom: 11px;
+    @include mq(pc) {
+        padding-bottom: 22px;
+    }
 }
 
 //contact//
@@ -73,6 +111,9 @@ body{
     padding: 27px 15px 30px;
     margin-left: auto;
     margin-right: auto;
+    @include mq(pc) {
+        padding: 54px 30px 60px;
+    }
 
 }
 
@@ -82,6 +123,11 @@ body{
   letter-spacing: 0.7px;
   font-weight: 500;
   margin-bottom: 19px;
+  @include mq(pc) {
+    font-size: 34px;
+    letter-spacing: 1.4px;
+    margin-bottom: 38px;
+  }
 
 }
 
@@ -89,6 +135,9 @@ body{
     display: flex;
     flex-direction: column;
     gap: 18px;
+    @include mq(pc) {
+        gap: 36px;
+    }
 
 }
 
@@ -107,6 +156,11 @@ body{
         background: transparent url(/img/woman@2x.png) no-repeat center center/contain;
         top: -101px;
         right: 0;
+        @include mq(pc) {
+            width: 156px;
+            height: 202px;
+            top: -202px;
+        }
     }
 
 
@@ -118,6 +172,9 @@ body{
 //recommend//
 .recommend {
     padding: 41px 31px 20px;
+    @include mq(pc) {
+        padding: 82px 62px 40px;
+    }
 
 }
 
@@ -125,6 +182,9 @@ body{
     padding: 11px 11px 21px;
     border: solid 0.6px #966332;
     position: relative;
+    @include mq(pc) {
+        padding: 22px 22px 42px;
+    }
 
 }
 
@@ -139,6 +199,12 @@ body{
   left: 50%;
   transform: translateX(-50%);
   white-space: nowrap;
+  @include mq(pc) {
+    font-size: 48px;
+    padding-left: 24px;
+    padding-right: 24px;
+    top: -30px;
+  }
 
 
 
@@ -149,6 +215,12 @@ body{
     padding-right: 14px;
     margin-top: 22px;
     margin-bottom: 16px;
+    @include mq(pc) {
+        padding-left: 28px;
+        padding-right: 28px;
+        margin-top: 44px;
+        margin-bottom: 32px;
+    }
 
 }
 
@@ -156,6 +228,9 @@ body{
     display: flex;
     flex-direction: column;
     gap: 10px;
+    @include mq(pc) {
+        gap: 20px;
+    }
 
 }
 
@@ -165,6 +240,11 @@ body{
     font-weight: 500;
     position: relative;
     padding-left: 29px;
+    @include mq(pc) {
+        line-height: 1.13;
+        letter-spacing: normal;
+        padding-left: 58px;
+    }
     &::before{
         position: absolute;
         content: "";
@@ -173,6 +253,12 @@ body{
         background: transparent url(/img/checkbox@2x.png) no-repeat center center/contain;
         top: 3px;
         left: 3px;
+        @include mq(pc) {
+            width: 28px;
+            height: 28px;
+            top: 6px;
+            left: 6px;
+        }
     }
 
 }
@@ -188,16 +274,27 @@ body{
     position: absolute;
     bottom: -57px;
         right: 7px;
+        @include mq(pc) {
+            bottom: -114px;
+            right: 14px;
+        }
     img{
         width: 118px;
         height: 167px;
         clip-path: inset(0 0 56px 0); 
+        @include mq(pc) {
+            width: 236px;
+            height: 334px;
+        }
 
     }
 }
 
 .worries__inner {
     padding: 8px 12px 16px;
+    @include mq(pc) {
+        padding: 16px 24px 32px;
+    }
 
 }
 
@@ -211,6 +308,11 @@ body{
     margin-bottom: 38px;
     text-align: center;
     white-space: nowrap;
+    @include mq(pc) {
+        font-size: 44px;
+        letter-spacing: -5.76px;
+        margin-bottom: 76px;
+    }
     &::after{
         position: absolute;
         content: "";
@@ -220,6 +322,11 @@ body{
         bottom:-19px;
         left: 50%;
         transform: translateX(-50%);
+        @include mq(pc) {
+            width: 638px;
+            height: 30px;
+            bottom: -38px;
+        }
     }
     span{
         -webkit-text-emphasis: filled;
@@ -237,6 +344,12 @@ body{
     gap: 9px;
     margin-left: 17px;
     margin-right: 17px;
+    @include mq(pc) {
+        padding: 36px 64px 34px;
+        gap: 18px;
+        margin-left: 34px;
+        margin-right: 34px;
+    }
 
 
 }
@@ -247,6 +360,9 @@ body{
     position: relative;
     padding-left: 12px;
     text-align: left;
+    @include mq(pc) {
+        padding-left: 24px;
+    }
     &::before{
         position: absolute;
         content: "";
@@ -255,6 +371,12 @@ body{
         background: transparent url(/img/checkbox@2x.png) no-repeat center center/contain;
         left: -6px;
         top: 3px;
+        @include mq(pc) {
+            width: 28px;
+            height: 28px;
+            left: -12px;
+            top: 6px;
+        }
     }
 
     
@@ -266,9 +388,17 @@ body{
     text-align: center;
     margin-top: 9px;
     margin-bottom: 12px;
+    @include mq(pc) {
+        margin-top: 18px;
+        margin-bottom: 24px;
+    }
     img{
         width: 87px;
     height: 18px;
+    @include mq(pc) {
+        width: 174px;
+        height: 36px;
+    }
     }
 
 }
@@ -280,6 +410,9 @@ body{
     line-height: 1.5;
     text-align: center;
     white-space: nowrap;
+    @include mq(pc) {
+        font-size: 36px;
+    }
 
 }
 .worries__texts{
@@ -287,6 +420,9 @@ body{
     flex-direction: column;
     margin-bottom: 12px;
     text-align: center;
+    @include mq(pc) {
+        margin-bottom: 24px;
+    }
 
 }
 
@@ -294,6 +430,9 @@ body{
     font-size: 27px;
     font-weight: 500;
     color: $color-sub-base;
+    @include mq(pc) {
+        font-size: 54px;
+    }
 
 }
 .worries__leads{
@@ -301,6 +440,9 @@ body{
     flex-direction: column;
     text-align: center;
     padding-right: 65px;
+    @include mq(pc) {
+        padding-right: 130px;
+    }
 }
 
 //about//
@@ -313,12 +455,20 @@ body{
     justify-content: center; /* 垂直方向の中央揃え */
     text-align: center; /* テキストを中央揃え */
     height: 100%; /* 必要に応じて高さを設定 */
+    @include mq(pc) {
+        padding: 58px 64px 58px 58px;
+    }
 
 
     img{
         width: 69px;
         height: 59px;
         margin-right: 25px;
+        @include mq(pc) {
+            width: 138px;
+            height: 118px;
+            margin-right: 50px;
+        }
 
     }
     h2{
@@ -327,6 +477,9 @@ body{
         line-height: 1.5;
         white-space: nowrap;
         color: $color-sub-base;
+        @include mq(pc) {
+            font-size: 64px;
+        }
 
 
     }
@@ -337,6 +490,11 @@ body{
         text-align: center;
         line-height: 2.5;
   letter-spacing: 2.3px;
+  @include mq(pc) {
+    font-size: 24px;
+    line-height: 2.4;
+    letter-spacing: 4.6px;
+  }
 
 
   }
@@ -346,11 +504,17 @@ body{
 .about__contents {
     padding: 36px 49px 30px;
     background-color: #faf5ee;
+    @include mq(pc) {
+        padding: 72px 98px 60px;
+    }
 
 }
 
 .about__img {
     margin-bottom: 20px;
+    @include mq(pc) {
+        margin-bottom: 40px;
+    }
 
 }
 
@@ -358,6 +522,9 @@ body{
     display: flex;
     flex-direction: column;
     gap: 15px;
+    @include mq(pc) {
+        gap: 30px;
+    }
 
 }
 
@@ -369,6 +536,9 @@ body{
 .about__media {
     padding: 21px 17px 25px;
     background-image: linear-gradient(to top, #ac8561, #ac917b), linear-gradient(to top, #000, #fff);
+    @include mq(pc) {
+        padding: 42px 34px 50px;
+    }
 
 }
 
@@ -376,6 +546,9 @@ body{
     padding: 43px 20px 152px;
     background: $color-sub-base;
     position: relative;
+    @include mq(pc) {
+        padding: 86px 40px 304px;
+    }
     &::before{
         position: absolute;
         content: "";
@@ -384,6 +557,12 @@ body{
         bottom: 20px;
         left: 15px;
         background: transparent url(/img/tv@2x.png)no-repeat center center/contain;
+        @include mq(pc) {
+            width: 316px;
+            height: 180px;
+            bottom: 40px;
+            left: 30px;
+        }
     }
     &::after{
         position: absolute;
@@ -393,6 +572,12 @@ body{
         right: 13px;
         bottom: 20px;
         background: transparent url(/img/news@2x.png)no-repeat center center/contain;
+        @include mq(pc) {
+            width: 258px;
+            height: 334px;
+            right: 26px;
+            bottom: 40px;
+        }
     }
     h2{
         text-align: center;
@@ -409,6 +594,10 @@ body{
     white-space: nowrap;
     position: relative;
     display: inline-block;
+    @include mq(pc) {
+        font-size: 62px;
+        margin-bottom: 50px;
+    }
     &::before{
         position: absolute;
         content: "";
@@ -417,9 +606,18 @@ body{
         right: -9px;
         top: -16px;
         background: transparent url(/img/about__kazari@2x.png)no-repeat center center/contain;
+        @include mq(pc) {
+            width: 38px;
+            height: 38px;
+            right: -18px;
+            top: -32px;
+        }
     }
     span{
         font-size: 27px;
+        @include mq(pc) {
+            font-size: 54px;
+        }
     }
 
 }
@@ -435,8 +633,15 @@ body{
     gap: 37px;
     margin-bottom: 9px;
     justify-content: center;
+    @include mq(pc) {
+        gap: 74px;
+        margin-bottom: 18px;
+    }
     img{
         height: 32px;
+        @include mq(pc) {
+            height: 64px;
+        }
     }
 
 }
@@ -447,6 +652,9 @@ body{
     display: flex;
     flex-direction: column;
     gap: 12px;
+    @include mq(pc) {
+        gap: 24px;
+    }
     span{
         color: $color-sub-base;
         background-color: #735a46;
@@ -465,14 +673,24 @@ body{
 
 .temple__inner {
     padding: 11px 24px 33px;
+    @include mq(pc) {
+        padding: 22px 48px 66px;
+    }
 
 }
 .temple__logo{
     text-align: center;
     margin-bottom: 7px;
+    @include mq(pc) {
+        margin-bottom: 14px;
+    }
     img{
         width: 45px;
         height: 39px;
+        @include mq(pc) {
+            width: 90px;
+            height: 78px;
+        }
     }
 }
 
@@ -482,6 +700,9 @@ body{
         text-align: center;
         line-height: 2.37;
         font-size: 10px;
+        @include mq(pc) {
+            font-size: 20px;
+        }
     }
     h2{
         font-size: 24px;
@@ -491,6 +712,10 @@ body{
     display: inline-block;
     margin-bottom: 32px;
     position: relative;
+    @include mq(pc) {
+        font-size: 48px;
+        margin-bottom: 64px;
+    }
     &::before{
         position: absolute;
         content: "";
@@ -499,6 +724,12 @@ body{
         background: transparent url(/img/temple__left@2x.png)no-repeat center center/contain;
         top: -17px;
         left: -20px;
+        @include mq(pc) {
+            width: 54px;
+            height: 54px;
+            top: -34px;
+            left: -40px;
+        }
     }
     &::after{
         position: absolute;
@@ -508,6 +739,12 @@ body{
         background: transparent url(/img/temple__right@2x.png)no-repeat center center/contain;
         bottom: -41px;
         right: -21px;
+        @include mq(pc) {
+            width: 54px;
+            height: 54px;
+            bottom: -82px;
+            right: -42px;
+        }
     }
 
     }
@@ -520,6 +757,9 @@ body{
     display: flex;
     flex-direction: column;
     gap: 20px;
+    @include mq(pc) {
+        gap: 40px;
+    }
 
 }
 
@@ -534,12 +774,18 @@ body{
         font-size: 8px;
         line-height: 21.8;
         text-align: center;
+        @include mq(pc) {
+            font-size: 16px;
+        }
     }
 
 }
 .note{
     font-size: 10px;
         line-height: 2.5;
+        @include mq(pc) {
+            font-size: 20px;
+        }
 }
 .temple__img{
     img{
@@ -548,6 +794,9 @@ body{
     }
     
     margin-bottom: 25px;
+    @include mq(pc) {
+        margin-bottom: 50px;
+    }
   
 }
 
@@ -557,6 +806,9 @@ body{
     line-height: 1.2;
     text-align: left;
     font-size: 20px;
+    @include mq(pc) {
+        font-size: 40px;
+    }
 
 
 }

@@ -37,8 +37,25 @@ body{
     @include mq(tab) {
         font-size: 21px;
     }
+    ruby {
+        position: relative;
+      }
+      ruby rt {
+        position: relative;
+        top: 0.6ex;
+      }
+
 
 }
+
+ruby {
+    position: relative;
+  }
+
+  ruby rt {
+    position: relative;
+    top: 0.6ex;
+  }
 
 //header//
 .header {
@@ -202,7 +219,7 @@ body{
 }
 
 .recommend__title {
-    font-size: 24px;
+    font-size: 25px;
   font-weight: 500;
   padding-left: 12px;
   padding-right: 12px;
@@ -328,12 +345,9 @@ body{
 }
 
 .worries__inner {
-    padding: 20px 6px 8px;
+    padding: 20px 0px 8px;
     @include mq(pc) {
-        padding: 25px 12px 16px;
-    }
-    @include mq(tab) {
-        padding: 25px 12px 16px;
+        padding: 25px 0px 16px;
     }
 
 }
@@ -399,18 +413,18 @@ body{
 
 
 .worries__items {
-    padding: 18px 32px 17px;
+    padding: 18px 30px 17px;
     background: $color-sub-base;
     display: flex;
     flex-direction: column;
     gap: 9px;
-    margin-left: 17px;
-    margin-right: 17px;
+    margin-left: 31px;
+    margin-right: 31px;
     @include mq(pc) {
         padding: 36px 64px 34px;
         gap: 18px;
-        margin-left: 34px;
-        margin-right: 34px;
+        margin-left: 63px;
+        margin-right: 63px;
     }
     @include mq(tab) {
         font-size: 22px;
@@ -581,7 +595,7 @@ body{
     ruby{
 
   rt{
-    font-size: 12px;
+    font-size: 13px;
         text-align: center;
         line-height: 2.5;
   letter-spacing: 2.3px;
@@ -641,7 +655,7 @@ body{
 }
 
 .about__media__contents {
-    padding: 43px 20px 152px;
+    padding: 43px 18px 152px;
     background: $color-sub-base;
     position: relative;
     @include mq(pc) {
@@ -825,15 +839,15 @@ body{
         }
     }
     h2{
-        font-size: 22px;
-    font-weight: 500;
+        font-size: 24px;
+    font-weight: 600;
     line-height: 0.1;
     font-family: $font-ja-2;
     display: inline-block;
     margin-bottom: 32px;
     position: relative;
     @include mq(pc) {
-        font-size: 48px;
+        font-size: 47px;
         margin-bottom: 64px;
     }
     @include mq(tab) {
@@ -1383,7 +1397,7 @@ body{
 
 }
 .close__text__title--container{
-    width: 179px;
+    width: 186px;
     border: solid 1px #766354;
     padding: 5px;
     box-sizing: border-box;
@@ -1477,9 +1491,9 @@ body{
 
 }
 .close__text__subtitle--top{
-    height: 74px;
+    height: 75px;
     @include mq(pc) {
-        height: 140px;
+        height: 150px;
     }
     @include mq(tab) {
         height: 102px;

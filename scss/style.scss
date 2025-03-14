@@ -37,25 +37,20 @@ body{
     @include mq(tab) {
         font-size: 21px;
     }
-    ruby {
-        position: relative;
-      }
-      ruby rt {
-        position: relative;
-        top: 0.6ex;
-      }
+    // ruby {
+    //     position: relative;
+    //   }
+    //   ruby rt {
+    //     position: relative;
+    //     top: 0.6ex;
+    //   }
+
+
+
 
 
 }
 
-ruby {
-    position: relative;
-  }
-
-  ruby rt {
-    position: relative;
-    top: 0.6ex;
-  }
 
 //header//
 .header {
@@ -839,7 +834,7 @@ ruby {
         }
     }
     h2{
-        font-size: 24px;
+        font-size: 23px;
     font-weight: 600;
     line-height: 0.1;
     font-family: $font-ja-2;
@@ -1491,14 +1486,15 @@ ruby {
 
 }
 .close__text__subtitle--top{
-    height: 75px;
+    height: 80px;
     @include mq(pc) {
-        height: 150px;
+        height: 155px;
     }
     @include mq(tab) {
-        height: 102px;
+        height: 107px;
     }
 }
+
 
 .close__text__subtitle--1 {
     padding-top: 8px;
